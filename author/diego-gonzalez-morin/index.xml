@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diego Gonzalez Morín | Federico Baldassarre</title>
+    <link>https://baldassarrefe.github.io/author/diego-gonzalez-morin/</link>
+      <atom:link href="https://baldassarrefe.github.io/author/diego-gonzalez-morin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Diego Gonzalez Morín</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Federico Baldassarre | Design: [Wowchemy](https://github.com/wowchemy/starter-academic)</copyright><lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://baldassarrefe.github.io/media/icon_hu2699d9b9ce559aed68fb11b26d693084_18909_512x512_fill_lanczos_center_2.png</url>
+      <title>Diego Gonzalez Morín</title>
+      <link>https://baldassarrefe.github.io/author/diego-gonzalez-morin/</link>
+    </image>
+    
+    <item>
+      <title>Deep Koalarization</title>
+      <link>https://baldassarrefe.github.io/publication/koalarization/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://baldassarrefe.github.io/publication/koalarization/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

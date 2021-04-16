@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Federico Baldassarre</title>
+    <link>https://baldassarrefe.github.io/</link>
+      <atom:link href="https://baldassarrefe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Federico Baldassarre</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Federico Baldassarre | Design: [Wowchemy](https://github.com/wowchemy/starter-academic)</copyright><lastBuildDate>Sun, 23 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://baldassarrefe.github.io/media/icon_hu2699d9b9ce559aed68fb11b26d693084_18909_512x512_fill_lanczos_center_2.png</url>
+      <title>Federico Baldassarre</title>
+      <link>https://baldassarrefe.github.io/</link>
+    </image>
+    
+    <item>
+      <title>Explanation-based Weakly-supervised Learning of Visual Relations with Graph Networks</title>
+      <link>https://baldassarrefe.github.io/publication/weakly-sup-relationship-detection/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://baldassarrefe.github.io/publication/weakly-sup-relationship-detection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GraphQA: Protein Model Quality Assessment Using Graph Convolutional Networks</title>
+      <link>https://baldassarrefe.github.io/publication/graphqa/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://baldassarrefe.github.io/publication/graphqa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Explainability Techniques for Graph Convolutional Networks</title>
+      <link>https://baldassarrefe.github.io/publication/explainability-gcn/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://baldassarrefe.github.io/publication/explainability-gcn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Morphing Architectures for Pose-based Image Generation of People in Clothing</title>
+      <link>https://baldassarrefe.github.io/publication/master-thesis/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://baldassarrefe.github.io/publication/master-thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Koalarization</title>
+      <link>https://baldassarrefe.github.io/publication/koalarization/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://baldassarrefe.github.io/publication/koalarization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://baldassarrefe.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baldassarrefe.github.io/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
