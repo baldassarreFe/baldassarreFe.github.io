@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300"
+   height="300"
+   version="1.1"
+   id="svg24"
+   sodipodi:docname="meta.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata28">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2034"
+     id="namedview26"
+     showgrid="false"
+     inkscape:zoom="4.1053963"
+     inkscape:cx="191.03113"
+     inkscape:cy="167.37384"
+     inkscape:window-x="0"
+     inkscape:window-y="52"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg24"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <desc
+     id="desc2">Logo of Meta Platforms -- Graphic created by Detmar Owen</desc>
+  <defs
+     id="defs18">
+    <linearGradient
+       id="Grad_Logo1"
+       x1="61"
+       y1="117"
+       x2="259"
+       y2="127"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,109)">
+      <stop
+         style="stop-color:#0064e1"
+         offset="0"
+         id="stop4" />
+      <stop
+         style="stop-color:#0064e1"
+         offset="0.4"
+         id="stop6" />
+      <stop
+         style="stop-color:#0073ee"
+         offset="0.83"
+         id="stop8" />
+      <stop
+         style="stop-color:#0082fb"
+         offset="1"
+         id="stop10" />
+    </linearGradient>
+    <linearGradient
+       id="Grad_Logo2"
+       x1="45"
+       y1="139"
+       x2="45"
+       y2="66"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,109)">
+      <stop
+         style="stop-color:#0082fb"
+         offset="0"
+         id="stop13" />
+      <stop
+         style="stop-color:#0064e0"
+         offset="1"
+         id="stop15" />
+    </linearGradient>
+  </defs>
+  <g
+     id="g4529"
+     transform="translate(6.22,-54.5)">
+    <path
+       inkscape:connector-curvature="0"
+       d="m 31.06,234.96 c 0,10.98 2.41,19.41 5.56,24.51 4.13,6.68 10.29,9.51 16.57,9.51 8.1,0 15.51,-2.01 29.79,-21.76 11.44,-15.83 24.92,-38.05 33.99,-51.98 l 15.36,-23.6 C 143,155.25 155.35,137.03 169.51,124.68 181.07,114.6 193.54,109 206.09,109 c 21.07,0 41.14,12.21 56.5,35.11 16.81,25.08 24.97,56.67 24.97,89.27 0,19.38 -3.82,33.62 -10.32,44.87 -6.28,10.88 -18.52,21.75 -39.11,21.75 v -31.02 c 17.63,0 22.03,-16.2 22.03,-34.74 0,-26.42 -6.16,-55.74 -19.73,-76.69 -9.63,-14.86 -22.11,-23.94 -35.84,-23.94 -14.85,0 -26.8,11.2 -40.23,31.17 -7.14,10.61 -14.47,23.54 -22.7,38.13 l -9.06,16.05 c -18.2,32.27 -22.81,39.62 -31.91,51.75 C 84.74,291.95 71.12,300 53.19,300 31.92,300 18.47,290.79 10.14,276.91 3.34,265.6 0,250.76 0,233.85 Z"
+       style="fill:#0081fb"
+       id="Logo0" />
+    <path
+       inkscape:connector-curvature="0"
+       d="M 24.49,146.3 C 38.73,124.35 59.28,109 82.85,109 c 13.65,0 27.22,4.04 41.39,15.61 15.5,12.65 32.02,33.48 52.63,67.81 l 7.39,12.32 c 17.84,29.72 27.99,45.01 33.93,52.22 7.64,9.26 12.99,12.02 19.94,12.02 17.63,0 22.03,-16.2 22.03,-34.74 l 27.4,-0.86 c 0,19.38 -3.82,33.62 -10.32,44.87 -6.28,10.88 -18.52,21.75 -39.11,21.75 -12.8,0 -24.14,-2.78 -36.68,-14.61 -9.64,-9.08 -20.91,-25.21 -29.58,-39.71 L 146.08,202.6 c -12.94,-21.62 -24.81,-37.74 -31.68,-45.04 -7.39,-7.85 -16.89,-17.33 -32.05,-17.33 -12.27,0 -22.69,8.61 -31.41,21.78 z"
+       style="fill:url(#Grad_Logo1)"
+       id="Logo1" />
+    <path
+       inkscape:connector-curvature="0"
+       d="m 82.35,140.23 c -12.27,0 -22.69,8.61 -31.41,21.78 -12.33,18.61 -19.88,46.33 -19.88,72.95 0,10.98 2.41,19.41 5.56,24.51 L 10.14,276.91 C 3.34,265.6 0,250.76 0,233.85 0,203.1 8.44,171.05 24.49,146.3 38.73,124.35 59.28,109 82.85,109 Z"
+       style="fill:url(#Grad_Logo2)"
+       id="Logo2" />
+  </g>
+</svg>
