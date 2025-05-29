@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Postdoc | Federico Baldassarre</title><link>https://baldassarrefe.github.io/tag/postdoc/</link><atom:link href="https://baldassarrefe.github.io/tag/postdoc/index.xml" rel="self" type="application/rss+xml"/><description>Postdoc</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><image><url>https://baldassarrefe.github.io/media/icon_hu2699d9b9ce559aed68fb11b26d693084_18909_512x512_fill_lanczos_center_3.png</url><title>Postdoc</title><link>https://baldassarrefe.github.io/tag/postdoc/</link></image><item><title>DINOv2 Meets Text: A Unified Framework for Image- and Pixel-Level Vision-Language Alignment</title><link>https://baldassarrefe.github.io/publication/dino-txt-cvpr-2025/</link><pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate><guid>https://baldassarrefe.github.io/publication/dino-txt-cvpr-2025/</guid><description>&lt;p>Example of zero-shot segmentation using DINO.txt:&lt;/p>
+&lt;figure id="figure-zero-shot-segmentation-using-dinotxt">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="Zero-shot segmentation using DINO.txt" srcset="
+/publication/dino-txt-cvpr-2025/zero-shot-segmentation_hu5f7f2fb3d4eefd0937ffa50dafd3c6da_1874313_b118d9c55be2d8f0ea4e22e4c448a407.webp 400w,
+/publication/dino-txt-cvpr-2025/zero-shot-segmentation_hu5f7f2fb3d4eefd0937ffa50dafd3c6da_1874313_e46ca33f9f7ec699094abe9dfbad06e5.webp 760w,
+/publication/dino-txt-cvpr-2025/zero-shot-segmentation_hu5f7f2fb3d4eefd0937ffa50dafd3c6da_1874313_1200x1200_fit_q80_h2_lanczos_3.webp 1200w"
+src="https://baldassarrefe.github.io/publication/dino-txt-cvpr-2025/zero-shot-segmentation_hu5f7f2fb3d4eefd0937ffa50dafd3c6da_1874313_b118d9c55be2d8f0ea4e22e4c448a407.webp"
+width="760"
+height="254"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Zero-shot segmentation using DINO.txt
+&lt;/figcaption>&lt;/figure></description></item><item><title>Cluster and Predict Latents Patches for Improved Masked Image Modeling</title><link>https://baldassarrefe.github.io/publication/capi-tmlr-2025/</link><pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate><guid>https://baldassarrefe.github.io/publication/capi-tmlr-2025/</guid><description>&lt;p>Here is a tweet-sized summary by the lead author:&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Want strong SSL, but not the complexity of DINOv2?&lt;br>&lt;br>CAPI: Cluster and Predict Latents Patches for Improved Masked Image Modeling. &lt;a href="https://t.co/gOB4QO7DKn">pic.twitter.com/gOB4QO7DKn&lt;/a>&lt;/p>&amp;mdash; TimDarcet (@TimDarcet) &lt;a href="https://twitter.com/TimDarcet/status/1890389871543419255?ref_src=twsrc%5Etfw">February 14, 2025&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script></description></item></channel></rss>
