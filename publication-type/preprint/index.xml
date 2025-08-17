@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Preprint | Federico Baldassarre</title><link>https://baldassarrefe.github.io/publication-type/preprint/</link><atom:link href="https://baldassarrefe.github.io/publication-type/preprint/index.xml" rel="self" type="application/rss+xml"/><description>Preprint</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate><image><url>https://baldassarrefe.github.io/media/icon_hu2699d9b9ce559aed68fb11b26d693084_18909_512x512_fill_lanczos_center_3.png</url><title>Preprint</title><link>https://baldassarrefe.github.io/publication-type/preprint/</link></image><item><title>DINOv3</title><link>https://baldassarrefe.github.io/publication/dinov3-2025/</link><pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate><guid>https://baldassarrefe.github.io/publication/dinov3-2025/</guid><description>&lt;h1 id="dinov3-">DINOv3 🦖🦖🦖&lt;/h1>
+&lt;p>DINOv3 is a significant leap forward in self-supervised vision foundation models.
+This major release sets a new standard, offering stunning &lt;strong>high-resolution dense features&lt;/strong> that are set to revolutionize various vision tasks.&lt;/p>
+&lt;p>While we scaled both model size and training data, DINOv3&amp;rsquo;s true innovation lies in key architectural and training advancements.&lt;/p>
+&lt;h2 id="whats-inside-dinov3">What&amp;rsquo;s inside DINOv3?&lt;/h2>
+&lt;p>DINOv3 is packed with features and techniques:&lt;/p>
+&lt;ul>
+&lt;li>A powerful &lt;strong>7B ViT&lt;/strong> foundation model, complemented by smaller distilled models.&lt;/li>
+&lt;li>Trained on a massive dataset of 1.7 billion curated images, remarkably &lt;strong>without any annotations&lt;/strong>, showcasing the power of self-supervision.&lt;/li>
+&lt;li>The introduction of &lt;strong>Gram anchoring&lt;/strong>, a novel technique that effectively addresses feature map degradation, a common challenge when training models of this scale for extended periods.&lt;/li>
+&lt;li>Achieving &lt;strong>high-resolution adaptation&lt;/strong> through the use of relative spatial coordinates and 2D RoPE, enabling exceptional performance on high-resolution inputs.&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./scaling-perf.png" alt="Scaling performance of the DINOv3" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="dense-feature-degradation-and-gram-anchoring">Dense Feature Degradation and Gram Anchoring&lt;/h3>
+&lt;p>As we scaled up model size, number of images, and training duration, we observed two phenomena:&lt;/p>
+&lt;ul>
+&lt;li>Downstream classification accuracy continued to improve.&lt;/li>
+&lt;li>Performance on dense tasks, which rely on rich, consistent feature maps, would rapidly drop.&lt;/li>
+&lt;/ul>
+&lt;p>For example, see the comparison of ImageNet-1K classification accuracy &lt;em>vs.&lt;/em> Pascal VOC segmentation mIoU:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./segdrop.png" alt="Segdrop" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>From qualitative observations, we notice that early during training, dense features are nicely localized and consistent within object boundaris.
+However, as training progresses, they become progressively more noisy.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./feature-degradation.png" alt="Feature map degradation" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>To overcome this roadblock, we introduce &lt;strong>Gram anchoring&lt;/strong>.
+Our goal is to achieve consistency found in early training iterations while retaining the semantic richness developed during late training.
+Therefore, we load an early checkpoint of the model being trained, and use is as a second teacher.
+Instead of forcing the features of the student to match the teacher features perfectly, which would be a too strong constraint, we distill the high-resolution &lt;strong>pairwise patch similarity&lt;/strong>, i.e. the Gram matrix, from the teacher.
+Critically, this still allows the student features to evolve freely and improve, enabling unprecedented performance.&lt;/p>
+&lt;p>Upon introducing Gram anchoring, we qualitatively observe an improvement in the feature maps:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./ducks-before-after.png" alt="Ducks before and after Gram anchoring" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>And quantitatively, we see a significant boost in performance on dense tasks:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./gram-before-after.png" alt="Performance before and after Gram anchoring" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="high-resolution-adaptation">High-Resolution Adaptation&lt;/h3>
+&lt;p>Now that we can train the model for longer, we should also think about training it on high-resolution images.
+For the longest part, we feed the model images of size $256{\times}256$, which we increase to $512{\times}512$ and $768{\times}768$ in the final training stages.&lt;/p>
+&lt;p>Our &lt;strong>constant-schedule training&lt;/strong> approach allows us to spin off a model specifically for high-resolution adaptation at any point.
+We seamlessly increase the input resolution while keeping Gram anchoring enabled.
+In our implementation, we use &lt;strong>relative spatial coordinates&lt;/strong> in the range of $[0,1]^2$ to represent the position of each patch in the image for the 2D rotational positional encoding (RoPE).
+As a consequence, images of higher resolution are simply treated as an interpolation of the patch coordinates, without special handling.&lt;/p>
+&lt;h2 id="how-well-does-it-work">How well does it work?&lt;/h2>
+&lt;h3 id="qualitative-visualization">Qualitative Visualization&lt;/h3>
+&lt;p>Compared to other vision foundation models, both self-supervised and not, DINOv3 features are more consistent and semantically rich.
+The quality of DINOv3&amp;rsquo;s feature maps is truly exceptional.&lt;/p>
+&lt;p>In the crowded market scene below, we visualize the cosine similarity between the patches marked with a red cross and all other patches.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./market.jpg" alt="Crowded market scene" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Compared to other vision foundation models, both self-supervised and not, DINOv3 patch features are more consistent, artifact-free, with no unwanted spilling around the edges of objects.
+Object contours look so precise, it appears like object segmentation is just one clustering step away!&lt;/p>
+&lt;p>Below, we visualize the first three PCA components of the features as RGB:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./pca-dinosaur-bike.jpg" alt="Feature PCA dinosaur and bike" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>After high-resolution adaptation, DINOv3 models generalize well to a wide range of resolutions, even higher than those seen during training.
+Forget Full-HD, it&amp;rsquo;s time for &lt;strong>dense features in 4K&lt;/strong>!&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./high-res-dog.jpg" alt="DINOv3 dense features in 4K" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="performance-evaluation">Performance Evaluation&lt;/h3>
+&lt;p>Even with a frozen backbone, DINOv3 delivers massive performance gains across a variety of benchmarks.
+Some examples include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>COCO detection&lt;/strong>: achieving a state-of-the-art 66.1 mAP with a frozen backbone and detection model based on Plain-DETR. This is incredible!&lt;/li>
+&lt;li>&lt;strong>ADE20k segmentation&lt;/strong>: a linear 55.9 mIoU, a significant +6 improvement over previous self-supervised methods, and 63.0 mIoU with a decoder on top.&lt;/li>
+&lt;li>&lt;strong>3D correspondence&lt;/strong>: impressive 64.4 recall on NAVI.&lt;/li>
+&lt;li>&lt;strong>Video tracking&lt;/strong>: a strong 83.3 J&amp;amp;F on DAVIS, thanks to its ability to handle high-resolution inputs.&lt;/li>
+&lt;/ul>
+&lt;p>Below, is an example of segmentation tracking on a video.
+Object instances in the first frame of the video are segmented manually (thanks SAM 2!).
+Subsequent frames are automatically segmented by propagating labels from the first frame based on patch similarity in the DINOv3 feature space.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./ducks-tracking.jpg" alt="Segmentation tracking example" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="model-family">Model Family&lt;/h2>
+&lt;p>DINOv3 comes with a versatile model family to suit various needs:&lt;/p>
+&lt;ul>
+&lt;li>The powerful &lt;strong>ViT-7B base model&lt;/strong>.&lt;/li>
+&lt;li>A range of ViT variants: ViT-S/S+/B/L/H+ with parameters ranging from 21M to 840M.&lt;/li>
+&lt;li>&lt;strong>ConvNeXt variants&lt;/strong> optimized for efficient inference.&lt;/li>
+&lt;li>A &lt;strong>text-aligned ViT-L (dino.txt)&lt;/strong>, opening up exciting possibilities for multi-modal applications.&lt;/li>
+&lt;/ul>
+&lt;p>Also, by popular demand, we switched to &lt;strong>patch size 16&lt;/strong>!
+No more patch size 14 and weird image sizes like $224{\times}224$ and $448{\times}448$.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./family-flops.png" alt="DINOv3 model family" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>The DINOv3 recipe exhibits remarkable generalization beyond natural images.
+We train a model from scratch on aerial images, setting a state of the art on geospatial benchmarks like canopy height estimation and land cover classification.
+This demonstrates the pure magic of self-supervised learning: the same recipe, applied to a different domain, yields incredible results.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./satellite-tasks.png" alt="Geospatial tasks" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>We are committed to open-source and we release the DINOv3 models with a free commercial license.
+Find everything you need to get started:&lt;/p>
+&lt;ul>
+&lt;li>Training and evaluation code, adapters, and notebooks in the &lt;a href="https://github.com/facebookresearch/dinov3" target="_blank" rel="noopener">GitHub repository&lt;/a>.&lt;/li>
+&lt;li>Pretrained backbones in this &lt;a href="https://huggingface.co/collections/facebook/dinov3-68924841bd6b561778e31009" target="_blank" rel="noopener">HF collection&lt;/a> compatible with the Transformers library.&lt;/li>
+&lt;li>The official &lt;a href="https://ai.meta.com/blog/dinov3-self-supervised-vision-model/" target="_blank" rel="noopener">blog post&lt;/a>.&lt;/li>
+&lt;li>The &lt;a href="https://arxiv.org/abs/2508.10104" target="_blank" rel="noopener">research paper&lt;/a> on arXiv.&lt;/li>
+&lt;/ul>
+&lt;h2 id="twitter-thread">Twitter thread&lt;/h2>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Say hello to DINOv3 🦖🦖🦖&lt;br>&lt;br>A major release that raises the bar of self-supervised vision foundation models.&lt;br>With stunning high-resolution dense features, it’s a game-changer for vision tasks!&lt;br>&lt;br>We scaled model size and training data, but here&amp;#39;s what makes it special 👇 &lt;a href="https://t.co/VBkRuAIOCi">pic.twitter.com/VBkRuAIOCi&lt;/a>&lt;/p>&amp;mdash; Federico Baldassarre (@BaldassarreFe) &lt;a href="https://twitter.com/BaldassarreFe/status/1956027867860516867?ref_src=twsrc%5Etfw">August 14, 2025&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script></description></item></channel></rss>
