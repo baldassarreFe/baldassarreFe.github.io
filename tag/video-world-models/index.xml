@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Video World Models | Federico Baldassarre</title><link>https://baldassarrefe.github.io/tag/video-world-models/</link><atom:link href="https://baldassarrefe.github.io/tag/video-world-models/index.xml" rel="self" type="application/rss+xml"/><description>Video World Models</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate><image><url>https://baldassarrefe.github.io/media/icon_hu2699d9b9ce559aed68fb11b26d693084_18909_512x512_fill_lanczos_center_3.png</url><title>Video World Models</title><link>https://baldassarrefe.github.io/tag/video-world-models/</link></image><item><title>Back to the Features: DINO as a Foundation for Video World Models</title><link>https://baldassarrefe.github.io/publication/dino-world-2025/</link><pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate><guid>https://baldassarrefe.github.io/publication/dino-world-2025/</guid><description>&lt;p>Given past frames, the model can predict future DINOv2 features autoregressively.
+How well does it do? It depends on the objects in motion and the context provided.&lt;/p>
+&lt;p>In the video below, the model can observe the taxi trajectory for long enough to predict that it will turn right.&lt;/p>
+&lt;figure id="figure-autoregressive-prediction-of-dino-world-with-10-frames-of-context-top-row-ground-truth-video-middle-row-per-frame-dinov2-features-bottom-row-autoregressive-predictions-of-dino-world">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="Autoregressive prediction of DINO-world with 10 frames of context. Top row: ground-truth video. Middle row: per-frame DINOv2 features. Bottom row: autoregressive predictions of DINO-world." srcset="
+/publication/dino-world-2025/autoregressive_taxi_10_hue4871d0d37b3e474f89ea0efdc740fbe_2238195_427fefce7f2c57f1a98b4845df2780f7.webp 400w,
+/publication/dino-world-2025/autoregressive_taxi_10_hue4871d0d37b3e474f89ea0efdc740fbe_2238195_94ce584be6b1d409b3080522cb194a44.webp 760w,
+/publication/dino-world-2025/autoregressive_taxi_10_hue4871d0d37b3e474f89ea0efdc740fbe_2238195_1200x1200_fit_q80_h2_lanczos_3.webp 1200w"
+src="https://baldassarrefe.github.io/publication/dino-world-2025/autoregressive_taxi_10_hue4871d0d37b3e474f89ea0efdc740fbe_2238195_427fefce7f2c57f1a98b4845df2780f7.webp"
+width="760"
+height="148"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Autoregressive prediction of DINO-world with 10 frames of context. Top row: ground-truth video. Middle row: per-frame DINOv2 features. Bottom row: autoregressive predictions of DINO-world.
+&lt;/figcaption>&lt;/figure>
+&lt;p>On the contrary, when given a too few frames, the model predicts that the taxi will continue straight.
+The blurry features towards the end are an artifact of the model&amp;rsquo;s uncertainty about the future due to the ambiguous context.&lt;/p>
+&lt;figure id="figure-autoregressive-prediction-of-dino-world-with-only-4-frames-of-context-top-row-ground-truth-video-middle-row-per-frame-dinov2-features-bottom-row-autoregressive-predictions-of-dino-world">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="Autoregressive prediction of DINO-world with only 4 frames of context. Top row: ground-truth video. Middle row: per-frame DINOv2 features. Bottom row: autoregressive predictions of DINO-world." srcset="
+/publication/dino-world-2025/autoregressive_taxi_4_hu70925a527a10997dd20e96e54ca285dc_2298178_fd0dcab6282978c42d276745cdf39c9b.webp 400w,
+/publication/dino-world-2025/autoregressive_taxi_4_hu70925a527a10997dd20e96e54ca285dc_2298178_d4d370e25d1a68dfe956ad7ba98555e2.webp 760w,
+/publication/dino-world-2025/autoregressive_taxi_4_hu70925a527a10997dd20e96e54ca285dc_2298178_1200x1200_fit_q80_h2_lanczos_3.webp 1200w"
+src="https://baldassarrefe.github.io/publication/dino-world-2025/autoregressive_taxi_4_hu70925a527a10997dd20e96e54ca285dc_2298178_fd0dcab6282978c42d276745cdf39c9b.webp"
+width="760"
+height="149"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Autoregressive prediction of DINO-world with only 4 frames of context. Top row: ground-truth video. Middle row: per-frame DINOv2 features. Bottom row: autoregressive predictions of DINO-world.
+&lt;/figcaption>&lt;/figure>
+&lt;hr>
+&lt;p>&lt;span style="font-size: .8rem">An early version of this work, without the action-conditioned fine-tuning and the planning tasks,
+was presented at the ICML 2025 Workshop on
+&lt;a href="https://physical-world-modeling.github.io/" target="_blank" rel="noopener">Building Physically Plausible World Models&lt;/a>.&lt;/span>&lt;/p></description></item></channel></rss>
